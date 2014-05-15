@@ -1,0 +1,12 @@
+#!/bin/bash
+
+metarCode=$1
+
+if [ -z $metarCode ]; then
+        echo "USAGE: weather [metar code]"
+else
+        #figure out the upper thing
+        #metarCode=$metarCode | tr '[:lower:]' '[:upper:]'
+        #echo $metarCode
+        curl ftp://tgftp.nws.noaa.gov/data/observations/metar/decoded/$metarCode.TXT
+fi
